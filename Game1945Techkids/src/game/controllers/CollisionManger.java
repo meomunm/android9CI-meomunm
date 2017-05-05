@@ -1,6 +1,5 @@
 package game.controllers;
 
-import game.Collider;
 import game.models.GameRect;
 
 import java.util.ArrayList;
@@ -12,6 +11,10 @@ public class CollisionManger {
     public static final CollisionManger istance =  new CollisionManger();
     private ArrayList<Collider> colliders;
 
+    public ArrayList<Collider> getColliders() {
+        return colliders;
+    }
+
     private CollisionManger() {
         this.colliders = new ArrayList<>();
     }
@@ -22,7 +25,11 @@ public class CollisionManger {
             for (int j = i + 1; j < colliders.size(); j++  ){
                 Collider ci = colliders.get(i);
                 Collider cj = colliders.get(j);
+/*
+ 1 2 3 4
 
+
+ */
                 GameRect rectI = ci.getGameRect();
                 GameRect rectJ = cj.getGameRect();
 

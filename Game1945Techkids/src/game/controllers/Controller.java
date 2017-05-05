@@ -1,6 +1,5 @@
 package game.controllers;
 
-import game.PlayerController;
 import game.models.GameRect;
 import game.views.ImageRender;
 
@@ -12,6 +11,7 @@ import java.awt.*;
 public class Controller {
     protected GameRect gameRect;
     protected ImageRender imageRender;
+
 
     public Controller() {
     }

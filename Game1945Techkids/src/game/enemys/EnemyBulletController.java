@@ -1,7 +1,7 @@
 package game.enemys;
 
-import game.Collider;
-import game.PlayerController;
+import game.controllers.Collider;
+import game.controllers.PlayerController;
 import game.controllers.CollisionManger;
 import game.controllers.Controller;
 import game.models.GameRect;
@@ -26,6 +26,8 @@ public class EnemyBulletController extends Controller implements Collider {
         if (other instanceof PlayerController){
             this.gameRect.setDead(true);
             ((PlayerController) other).hitPoint(1);
+
+            CollisionManger.istance.remove(this);
         }
     }
 
@@ -34,6 +36,8 @@ public class EnemyBulletController extends Controller implements Collider {
         gameRect.move(0,7);
         if (this.gameRect.getY() >= 768){
             this.gameRect.setDead(true);
+
+            CollisionManger.istance.remove(this);
         }
     }
 }
